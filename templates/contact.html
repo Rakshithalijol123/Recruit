@@ -1,0 +1,255 @@
+
+{% load static %}
+{% static "images" as baseUrl %}
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>Recruit</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+	<!-- bootstrap css -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+	<!-- end css -->
+	<!-- bootstrap js -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+		crossorigin="anonymous"></script>
+	<!-- end js -->
+
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+	{% block mycss %} 
+	<style> 
+		.zoom {
+			padding: 50px;
+			transition: transform .6s;  
+		}
+	  
+	  	.zoom:hover {
+			transform: scale(1.2);
+	  	} 
+	</style> 
+	  {% endblock %}
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			{% if messages %}
+			{% for message in messages %}
+			<div class="alert alert-{{message.tags}} alert-dismissible fade show my-0" role="alert">
+				<strong>Holy guacamole!</strong> {{message}}
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+			{% endfor %}
+			{% endif %}
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"><strong>Recruit</strong> DSCE</a>
+					
+				</header>
+
+				<header class="text-center my-4">
+					<h1>Contact Us</h1>
+				</header>
+
+				
+			<div class="container py-4">
+				<form method="post" action="/contact/" class="row g-3">
+                    {% csrf_token %}
+					<div class="col-md-6">
+						<label for="name" class="form-label">First Name</label>
+						<input type="text" name="fname" class="form-control" id="first_name" value="{{first_name}}">
+					</div>
+					<div class="col-md-6">
+						<label for="name" class="form-label">Last Name</label>
+						<input type="text" name="lname" class="form-control" id="last_name" value="{{first_name}}">
+					</div>
+					<div class="col-md-6">
+						<label for="inputEmail4" class="form-label">Email</label>
+						<input type="email" name="email" class="form-control" id="inputEmail4" value="{{email}}">
+					</div>
+					<div class="col-md-6">
+						<label for="phone" class="form-label">Phone No.</label>
+						<input type="number" name="phno" class="form-control" id="phno" value="{{phone}}">
+					</div>
+					<div class="mb-3">
+						<label for="exampleFormControlTextarea1" class="form-label">Tell me about what you want to
+							contact me for....</label>
+						<textarea class="form-control" name="tell_me" id="tell_me" rows="3" value="{{tell_me}}"></textarea>
+					</div>
+					<div class="col-12">
+						<label for="inputAddress" class="form-label">Address</label>
+						<input type="text" class="form-control" name="address" id="address" placeholder="1234 Main St" value="{{address}}">
+					</div>
+					<div class="col-12">
+						<label for="inputAddress2" class="form-label">Address 2</label>
+						<input type="text" class="form-control" id="address2" name="address2"
+							placeholder="Apartment, studio, or floor" value="{{address2}}">
+					</div>
+					<div class="col-md-6">
+						<label for="inputCity" class="form-label">City</label>
+						<input type="text" class="form-control" id="city" name="city" value="{{city}}">
+					</div>
+					<div class="col-md-2">
+						<label for="inputZip" class="form-label">Zip</label>
+						<input type="text" class="form-control" id="Zip" name="zip" value="{{zip}}">
+					</div>
+					<div class="col-12 text-center">
+						<button type="submit" class="button">Submit</button>
+					</div>
+				</form>
+			</div>
+
+			<div class="container">
+				<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+					<div class="col-md-4 d-flex align-items-center">
+						<a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+							<svg class="bi" width="30" height="24">
+								<use xlink:href="#bootstrap"></use>
+							</svg>
+						</a>
+						<span class="text-muted"><b>©</b> 2022 <b>Recruit</b>, Inc</span>
+					</div>
+
+					
+
+					<ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+						</li>
+						<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+						</li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+						</li>
+						<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+
+					</ul>
+					</ul>
+				</footer>
+			</div>
+
+		</div>
+	</div>
+	
+
+				
+		
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Search -->
+				<section id="search" class="alt">
+					<form method="post" action="#">
+						<input type="text" name="query" id="query" placeholder="Search" />
+					</form>
+				</section>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="/">Homepage</a></li>
+						<li><a href="/about/">About Us</a></li>
+						<li><a href="/contact/">Contact Us</a></li>
+						<li>
+							<span class="opener">Internships</span>
+							<ul>
+								<li><a href="/view_all_internships/">Full-Time</a></li>
+								<li><a href="/view_all_internships/">Remote</a></li>
+								<li><a href="/view_all_internships/">Mixed</a></li>
+							</ul>
+						</li>
+						<li><a href="/res/">Resume</a></li>
+						<!-- <li><a href="#">Etiam Dolore</a></li>
+										<li><a href="#">Adipiscing</a></li> -->
+						<li>
+							<span class="opener">Categories</span>
+							<ul>
+								<li><a href="/IT_cat/">IT Related</a></li>
+								<li><a href="/Ece_cat/">Electrical Related</a></li>
+								<li><a href="/Mech_cat/">Mechanical Related</a></li>
+								<li><a href="/view_all_internships/">Civil Related</a></li>
+							</ul>
+						</li>
+						<!-- <li><a href="#">Maximus Erat</a></li>
+										<li><a href="#">Sapien Mauris</a></li>
+										 -->
+					</ul>
+				</nav>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Top Achievers</h2>
+					</header>
+					<div class="mini-posts">
+						<article>
+							<a href="#" class="image"><img src="{% static 'images/pic07.jpg' %}" alt="" /></a>
+							<p>Aenean ornare velt lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="{% static 'images/pic08.jpg' %}" alt="" /></a>
+							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="{% static 'images/pic09.jpg' %}" alt="" /></a>
+							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+						</article>
+					</div>
+					<ul class="actions">
+						<!-- <li><a href="#" class="button">More</a></li> -->
+					</ul>
+				</section>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Get in touch</h2>
+					</header>
+					<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem
+						ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+						tempus aliquam.</p>
+					<ul class="contact">
+						<li class="icon solid fa-envelope"><a href="#">20beam031@dsce.edu.in</a></li>
+						<li class="icon solid fa-phone">+916362226060</li>
+						<li class="icon solid fa-home">Dayananda Sagar College Of Engineering<br />
+							Bengaluru, Karnataka 560087</li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; 2022 Copyright. <b>Recruit</b> - Internship Cell,DSCE
+						<!-- <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>. -->.
+					</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/browser.min.js' %}"></script>
+	<script src="{% static 'js/breakpoints.min.js' %}"></script>
+	<script src="{% static 'js/util.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

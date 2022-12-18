@@ -1,0 +1,364 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Editorial by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>{{searched_internship.0.name}} | Recruit</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+	<!-- bootstrap css -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+	<!-- end css -->
+	<!-- bootstrap js -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+		crossorigin="anonymous"></script>
+	<!-- end js -->
+
+	<link rel="stylesheet" href="{% static 'css/main.css' %}" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<!-- Header -->
+				<header id="header">
+					<a href="index.html" class="logo"><strong>Recruit</strong> DSCE</a>
+					<!-- <ul class="icons">
+						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a>
+						</li>
+						<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+
+					</ul> -->
+					<!-- <ul class="d-flex">
+						<strong><a class="nav-link mx-4 h1" href="#">LogIn</a></strong>
+						<strong><a class="nav-link mx-4 h1" href="#">SignIn</a></strong>
+					</ul> -->
+
+					<!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+						  <a class="nav-link active" aria-current="page" href="#">LogIn</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">SignIn</a>
+						</li>
+					</ul> -->
+				</header>
+
+				<!-- Banner -->
+				<!-- <section id="banner">
+					<div class="content">
+						<header>
+							<h1>Recruit<br />
+							</h1>
+							<p>A Internship Cell @ DSCE</p>
+						</header>
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi eveniet sed placeat totam
+							fugiat nulla corrupti, tempore ipsa vero quia odio magni ea maiores dolores debitis rem.
+							Magnam aspernatur, reiciendis cupiditate voluptatem, fuga neque facilis eos quae quidem eius
+							consequatur quos nemo et veritatis corrupti dolore debitis temporibus nobis a! Lorem ipsum
+							dolor sit amet consectetur adipisicing elit.</p>
+						<ul class="actions">
+							<li><a href="#" class="button big">Learn More</a></li>
+						</ul>
+					</div>
+					<span class="image object">
+						<img src="images/logo1.png" alt="logo" />
+					</span>
+				</section> -->
+
+				<!-- Section -->
+				<!-- <section>
+					<header class="major">
+						<h2>Features</h2>
+					</header>
+					<div class="features">
+						<article>
+							<span class="icon fa-gem"></span>
+							<div class="content">
+								<h3>Feature - 1</h3> -->
+				<!-- Best internships  -->
+				<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis ipsam exercitationem
+									laboriosam cum numquam adipisci modi, quidem tempora cumque quae. Lorem ipsum dolor
+									sit amet.</p> -->
+				<!-- </div>
+						</article>
+						<article>
+							<span class="icon solid fa-paper-plane"></span>
+							<div class="content">
+								<h3>Feature - 2</h3> -->
+				<!-- We keep touch with students and Updates -->
+				<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem dolorum saepe enim
+									optio. Veritatis porro unde consequatur, perspiciatis esse qui quis repellat odit
+									voluptatem sequi?</p> -->
+				<!-- </div>
+						</article>
+						<article>
+							<span class="icon solid fa-rocket"></span>
+							<div class="content">
+								<h3>Feature - 3</h3> -->
+				<!-- Speed and most effective -->
+				<!-- <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolor omnis quas, officiis
+									facilis consequatur fugiat itaque eum. Asperiores minus eos voluptate? Soluta!</p> -->
+				<!-- </div>
+					    </article>
+						<article>
+							<span class="icon solid fa-signal"></span>
+							<div class="content">
+								<h3>Feature - 4</h3> -->
+				<!-- Networking -->
+				<!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam aut voluptatem
+									neque rem vel deserunt ullam enim nam amet nemo.</p> -->
+				<!-- </div>
+						</article>
+					</div>
+				</section> -->
+
+				<!-- Section -->
+				<section>
+					<header class="major text-center">
+						<h2>{{searched_internship.0.name}}</h2>
+					</header>
+					<div class="intimg text-center">
+						{% comment %} <img src="{% static 'images/logo1.png' %}" alt="logo" /> {% endcomment %}
+						<a href="#" class="image"><img style="width: 500px; height:300px;" src="/media/{{searched_internship.0.img}}" alt="{{searched_internship.0.name}}" /></a>
+					</div>
+					<div class="deatils text-center">
+						<h3>{{searched_internship.0.position}}</h3>
+						<p>Rs <b>{{searched_internship.0.stipend}}</b> per Month</p>
+						<p><b>{{searched_internship.0.duration}} Months</b> Duration</p>
+						<p><b>Work from home</b></p>
+						<p>Hiring starts from <b>{{searched_internship.0.date}}</b> </p>
+						<p>Part time allowed</p>
+					</div>
+					<hr>
+					<h4>{{searched_internship.0.name}}</h4>
+					<div class="about_comp">
+						{{searched_internship.0.desc}}
+					</div>
+					<hr>
+					<h4>About Internship</h4>
+					<div class="about_intern">
+						<b>Selected Intern's day-to-day responsibilities include :</b>
+						<ol>
+							<li>Work on Website Development</li>
+							<li>Design of the Web Pages</li>
+							<li>Build a niche for simultaneously one-click updates on all social media platforms at a
+								time along with an auto SEO keywords generator from the uploaded documents,and pictures.
+							</li>
+							<li>Upload product images with descriptions along with prices and specification.</li>
+						</ol>
+					</div>
+					<div class="skills">
+						<b>Skill(s) required :</b>
+						<ul>
+							<li>Data Structures and Algorithm</li>
+							<li>Problem Solving</li>
+							<li>HTML5 , CSS3 or Front-End Related</li>
+							<li>JavaScript</li>
+							<li>Python(DJango) or PHP</li>
+							<li>MongoDB</li>
+							<li>Git</li>
+						</ul>
+					</div>
+					<div class="who_can_apply">
+						<b>Only those candidates can apply who : </b>
+						<ol>
+							<li>B.E. / B.Tech / M.Tech</li>
+							<li>Are available Work from home.</li>
+							<li>CGPA must be 7 or greater than 7.</li>
+							<li>No backlogs till current year.</li>
+							<li>Student must have atleast one semester in college.</li>
+							<li>Should available for 6 months.</li>
+							<li>Have relevant skills and interests.</li>
+						</ol>
+					</div>
+					<div class="perks">
+						<b>Perks</b>
+						<ul>
+						 	<li>Certificate of Completion</li>
+							<li>Flexible Work hours</li>
+							<li>4 days a week</li>
+						</ul>
+					</div>
+					<div class="btns dflex">
+						<a href="/" class="button text-center">Back to Home</a>
+					</div>
+					<!--  <div class="posts">
+						<article>
+						<a href="#" class="image"><img src="images/jpmc.jpeg" alt="" /></a>
+							<h3>JP Morgan Chase and Co</h3>
+						 	<p>Stipend : Rs<b>15000</b> per month</p>
+							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam
+								facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+							<ul class="actions">
+								<li><a href="#" class="button">More</a></li>
+							</ul>
+						</article>
+					</div><br> -->
+				</section>
+
+				<div class="container">
+					<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+						<div class="col-md-4 d-flex align-items-center">
+							<a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+								<svg class="bi" width="30" height="24">
+									<use xlink:href="#bootstrap"></use>
+								</svg>
+							</a>
+							<span class="text-muted"><b>©</b> 2022 <b>Recruit</b>, Inc</span>
+						</div>
+
+						<!-- <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+							<li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+										<use xlink:href="#twitter"></use>
+									</svg></a></li>
+							<li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+										<use xlink:href="#instagram"></use>
+									</svg></a></li>
+							<li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
+										<use xlink:href="#facebook"></use>
+									</svg></a></li> -->
+
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a>
+							</li>
+							<li><a href="#" class="icon brands fa-snapchat-ghost"><span
+										class="label">Snapchat</span></a>
+							</li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a>
+							</li>
+							<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+
+						</ul>
+					</footer>
+				</div>
+
+			</div>
+		</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar">
+			<div class="inner">
+
+				<!-- Search -->
+				<section id="search" class="alt">
+					<form method="post" action="#">
+						<input type="text" name="query" id="query" placeholder="Search" />
+					</form>
+				</section>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="/">Homepage</a></li>
+						<li><a href="/about/">About Us</a></li>
+						<li><a href="/contact/">Contact Us</a></li>
+						<li>
+							<span class="opener">Internships</span>
+							<ul>
+								<li><a href="/view_all_internships/">Full-Time</a></li>
+								<li><a href="/view_all_internships/">Remote</a></li>
+								<li><a href="/view_all_internships/">Mixed</a></li>
+							</ul>
+						</li>
+						<li><a href="/res/">Resume</a></li>
+						<!-- <li><a href="#">Etiam Dolore</a></li>
+										<li><a href="#">Adipiscing</a></li> -->
+						<li>
+							<span class="opener">Categories</span>
+							<ul>
+								<li><a href="/IT_cat/">IT Related</a></li>
+								<li><a href="/Ece_cat/">Electrical Related</a></li>
+								<li><a href="/Mech_cat/">Mechanical Related</a></li>
+								<li><a href="/view_all_internships/">Civil Related</a></li>
+							</ul>
+						</li>
+						<!-- <li><a href="#">Maximus Erat</a></li>
+										<li><a href="#">Sapien Mauris</a></li>
+										 -->
+					</ul>
+				</nav>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Top Achievers</h2>
+					</header>
+					<div class="mini-posts">
+						<article>
+							<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+						</article>
+						<article>
+							<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+							<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+						</article>
+					</div>
+					<ul class="actions">
+						<li><a href="#" class="button">More</a></li>
+					</ul>
+				</section>
+
+				<!-- Section -->
+				<section>
+					<header class="major">
+						<h2>Get in touch</h2>
+					</header>
+					<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem
+						ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat
+						tempus aliquam.</p>
+					<ul class="contact">
+						<li class="icon solid fa-envelope"><a href="#">20beam031@dsce.edu.in</a></li>
+						<li class="icon solid fa-phone">+916362226060</li>
+						<li class="icon solid fa-home">Dayananda Sagar College Of Engineering<br />
+							Bengaluru, Karnataka 560087</li>
+					</ul>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<p class="copyright">&copy; 2022 Copyright. <b>Recruit</b> - Internship Cell,DSCE
+						<!-- <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>. -->.
+					</p>
+				</footer>
+
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/browser.min.js' %}"></script>
+	<script src="{% static 'js/breakpoints.min.js' %}"></script>
+	<script src="{% static 'js/util.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
